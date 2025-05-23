@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            margin: 0;
+            background-image: url('static/images/login_images.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            text-align: center;
+            color: #ffffff;  
+        }
+
+        h2, p, a {
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 15px;  
+            display: inline-block;
+            border: 2px solid #f8f8f8; 
+            margin-top: 20px; 
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 16px;
+            padding: 10px 15px;
+            margin-top: 10px;
+            background-color: #007BFF;
+            border-radius: 5px;
+            border: 2px solid #0056b3;
+            transition: background-color 0.3s ease; 
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="welcome-box">
+        <h2>Welcome {{ username }}!</h2>
+    </div>
+
+    
+    <div class="message-box">
+        <p>You have been logged in successfully</p>
+    </div>
+
+    
+    <a href="{{ url_for('search_restaurants') }}">Go to the restaurant search page</a><br>
+    <a href="{{ url_for('login') }}">Logout</a>
+
+</body>
+</html>
