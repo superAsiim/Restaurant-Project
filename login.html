@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      height: 100vh;
+      background-image: url('static/images/login_images.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-container {
+      max-width: 400px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 25px 30px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-sizing: border-box;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      color: #414040;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 12px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .register-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .register-link:hover {
+      text-decoration: underline;
+    }
+
+    .error-message {
+      color: red;
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Login</h2>
+
+    <form action="/login" method="POST">
+      <label for="username">Username:</label>
+      <input type="text" name="username" required />
+
+      <label for="password">Password:</label>
+      <input type="password" name="password" required />
+
+      <button type="submit">Login</button>
+    </form>
+    <br />
+    {% if error %}
+    <div class="error-message">{{ error|safe }}</div>
+    {% endif %}
+
+    <p>Don't have an account? <a class="register-link" href="/register">Create a new account here</a></p>
+  </div>
+
+</body>
+</html>
