@@ -3,8 +3,8 @@ import sqlite3
 conn = sqlite3.connect('users.db')
 cursor = conn.cursor()
 
-username = "admin"
-password = "12345"
+username = "*****"
+password = "*****"
 
 
 cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
